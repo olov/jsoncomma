@@ -19,7 +19,7 @@ I wrote it in anger.
     ],
 }
 
-> jsoncomma.parseUnsafe(str));
+> jsoncomma.parseUnsafe(str);
 { kramer: 'yoyoma', hello: [ 4, 2 ] }
 ```
 
