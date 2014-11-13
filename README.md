@@ -1,5 +1,8 @@
 # jsoncomma.js
-Similar to JSON but with trailing commas. Because you don't like noisy diffs.
+Similar to JSON but with trailing commas. Because you like diffs to be
+minimal and are fed up with JSON.parse SyntaxError exceptions.
+
+I wrote it in anger.
 
 
 
@@ -20,9 +23,14 @@ Similar to JSON but with trailing commas. Because you don't like noisy diffs.
 { kramer: 'yoyoma', hello: [ 4, 2 ] }
 ```
 
-`parseUnsafe` is called that for a reason so only feed it 100% trusted data
-if your care about security. `parseUnsafe` is just a wrapper around
-`new Function`.
+`parseUnsafe` is called that for a reason so only feed it trusted data.
+`parseUnsafe` is just a wrapper around `new Function`.
+
+`jsoncomma.parseUnsafe(str)` does not support a reviver (the second
+`JSON.parse` argument).
+
+`jsoncomma.stringify(v, ignored_replacer, space)` requires a null `replacer`
+ and a numeric `space`. It always pretty-prints.
 
 
 
