@@ -5,19 +5,13 @@ var jsoncomma = require("../");
 
 test("exceptions", function(t) {
     t.throws(function() {
-        jsoncomma.parseSafe('x');
-    });
-    t.throws(function() {
         jsoncomma.parseUnsafe('x');
     });
     t.throws(function() {
-        jsoncomma.parseSafe('Math');
+        jsoncomma.parseUnsafe('{:1}');
     });
     t.throws(function() {
-        jsoncomma.parseSafe('{:1}');
-    });
-    t.throws(function() {
-        jsoncomma.parseSafe('a:1');
+        jsoncomma.parseUnsafe('a:1');
     });
     t.doesNotThrow(function() {
         jsoncomma.parseUnsafe('Math');
@@ -30,7 +24,7 @@ test("various", function(t) {
 
     function both(v, str) {
         t.equal(jsoncomma.stringify(v, null, 4), str);
-        t.deepEqual(jsoncomma.parseSafe(str), v);
+        t.deepEqual(jsoncomma.parseUnsafe(str), v);
     }
 
     function stringify(v, str) {
@@ -38,7 +32,7 @@ test("various", function(t) {
     }
 
     function parse(str, v) {
-        t.deepEqual(jsoncomma.parseSafe(str), v);
+        t.deepEqual(jsoncomma.parseUnsafe(str), v);
     }
 
     function join(/*var_args*/) {
