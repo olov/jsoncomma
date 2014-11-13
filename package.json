@@ -1,0 +1,24 @@
+{
+  "name": "jsoncomma",
+  "version": "1.0.0",
+  "description": "JSON with trailing commas for happy diffs",
+  "main": "jsoncomma.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/olov/jsoncomma.git"
+  },
+  "keywords": [
+    "json",
+    "comma",
+    "trailing",
+    "diff"
+  ],
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "devDependencies": {
+    "tap": "~0.4.0"
+  },
+  "author": "Olov Lassus <olov.lassus@gmail.com>",
+  "license": "MIT"
+}
